@@ -1,22 +1,20 @@
 package com.onlycamsbackend.demo.model;
 
-import jakarta.persistence.*;
+import com.onlycamsbackend.demo.model.PanierId;
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 @Entity
 @Table(name = "Panier")
 public class Panier {
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "Utilisateur_Id")
-    private Utilisateur utilisateur;
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "Product_Id")
-    private Produit produit;
+    @EmbeddedId
+    private PanierId id;
 
     @Column(name = "quantite")
     private int quantite;
 
     // Getters and setters
 }
-

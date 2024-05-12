@@ -1,21 +1,16 @@
 package com.onlycamsbackend.demo.model;
 
+import com.onlycamsbackend.demo.model.CommandeId;
 import jakarta.persistence.*;
-
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "Commande")
 public class Commande {
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "Utilisateur_Id")
-    private Utilisateur utilisateur;
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "Product_Id")
-    private Produit produit;
+    @EmbeddedId
+    private CommandeId id;
 
     @Column(name = "date_commande")
     private Date dateCommande;
@@ -28,4 +23,3 @@ public class Commande {
 
     // Getters and setters
 }
-

@@ -19,10 +19,10 @@ public class Utilisateur {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "numero_tel")
+    @Column(name = "numeroTel")
     private String numeroTel;
 
-    @Column(name = "mot_de_passe")
+    @Column(name = "motDePasse")
     private String motDePasse;
 
     @Column(name = "est_valide")
@@ -60,8 +60,7 @@ public class Utilisateur {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
+    
     public String getNumeroTel() {
         return numeroTel;
     }
@@ -73,8 +72,6 @@ public class Utilisateur {
     public String getMotDePasse() {
         return motDePasse;
     }
-
-
 
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
@@ -112,15 +109,5 @@ public class Utilisateur {
         this.adresse = adresse;
     }
 
-    public String getCheminAvatar() {
-        return null;
-    }
-
-    public void setCheminAvatar(String cheminAvatar) {
-    }
-
-
-
-    // Getters and setters
 }
 
