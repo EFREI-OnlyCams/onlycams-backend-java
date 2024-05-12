@@ -37,6 +37,90 @@ public class Utilisateur {
     @Column(name = "adresse")
     private String adresse;
 
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public String getNumeroTel() {
+        return numeroTel;
+    }
+
+    public void setNumeroTel(String numeroTel) {
+        this.numeroTel = numeroTel;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    }
+
+    public boolean isEstValide() {
+        return estValide;
+    }
+
+    public void setEstValide(boolean estValide) {
+        this.estValide = estValide;
+    }
+
+    public boolean isEstAdmin() {
+        return estAdmin;
+    }
+
+    public void setEstAdmin(boolean estAdmin) {
+        this.estAdmin = estAdmin;
+    }
+
+    public int getNote() {
+        return note;
+    }
+
+    public void setNote(int note) {
+        this.note = note;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public String getCheminAvatar() {
+        return null;
+    }
+
+    public void setCheminAvatar(String cheminAvatar) {
+    }
+
+
+
     // Getters and setters
 }
 
