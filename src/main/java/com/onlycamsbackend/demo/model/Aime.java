@@ -1,4 +1,4 @@
-package com.onlycamsbackend.demo;
+package com.onlycamsbackend.demo.model;
 
 import jakarta.persistence.*;
 
