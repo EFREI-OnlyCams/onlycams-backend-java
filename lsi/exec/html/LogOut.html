@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log Out</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="..\css\styles.css">
+    <script src="..\js\script.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <header>
+        <div id="navbar">
+            <nav>
+                <div>
+                    <ul>
+                        <img src="..\img\logo.png" alt="logo" class="logo">
+                        <li>
+                            <a href="LogOut.html"><b>Log In</b></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn"><b>Rooms</b></a>
+                            <div class="dropdown-content">
+                                <a href="rooms\Enigma.html">Enigma</a>
+                                <a href="rooms\Tortured_Souls.html">Tortured Souls</a>
+                                <a href="rooms\Night_At_The_Museum.html">Night At The Museum</a>
+                                <a href="rooms\Silent_Subway.html">Silent Subway</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="reserve.html"><b>Reserve</b></a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><b>Contact</b></a>
+                        </li>
+                        <li>
+                            <a href="aboutus.html"><b>About Us</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="fog">
+        <div class="flicker">
+            <span id="I">C</span>
+            <span >L</span>
+            <span >O</span>
+            <span >C</span>
+            <span>K</span>
+            <span>E</span>
+            <span>D</span>
+        </div>
+    </section>
+</div>
+
+<div class="login">
+    <form action="..\php\login.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Log In">
+    </form>
+</div>
+
+<footer>
+    <div class="footer">
+        <p>&copy; 2024 Psy</p>
+    </div>
+</footer>
+</body>
+</html>
