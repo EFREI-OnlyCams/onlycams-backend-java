@@ -19,6 +19,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("mysql:mysql-connector-java:8.0.28")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 }
 
 tasks.withType<Test> {
