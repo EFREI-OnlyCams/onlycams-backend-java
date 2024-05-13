@@ -25,7 +25,7 @@ public class UtilisateurController {
         return userService.verifyConnexion(userRequest.getEmail(),userRequest.getMotDePasse());
     }
 
-    @GetMapping("infosUser/{userId}")
+    @GetMapping("/infosUser/{userId}")
     @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<UtilisateurDTO> getUserInfo(@PathVariable int userId) {
         UtilisateurDTO utilisateurDTO = userService.getUserInfo(userId);

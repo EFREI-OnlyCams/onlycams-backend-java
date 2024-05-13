@@ -38,7 +38,6 @@ public class UtilisateurService {
             return utilisateurDTO;
         });
     }
-
     public void changePassword(int id,String motDePasse) {
         jdbcTemplate.update("CALL ChangerMotDePasse(?, ?)",id,motDePasse);
     }
