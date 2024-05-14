@@ -12,10 +12,15 @@ public class CommandeController {
     @Autowired
     private CommandeService commandeService;
 
-    @GetMapping("/commandes/{userId}")
+    @GetMapping("/get/{userId}")
     @CrossOrigin(origins = "http://localhost:3000")
-    public List<Map<String, Object>> getOrdersByUserId(@PathVariable int userId) {
+    public List<String> getOrdersByUserId(@PathVariable int userId) {
         return commandeService.getOrdersByUserId(userId);
     }
 
+    @PostMapping("/order/{userId}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public void OrderProducts(@PathVariable int userId) {
+        commandeService.OrderProducts(userId);
+    }
 }
