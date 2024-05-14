@@ -28,6 +28,12 @@ public class PanierController {
         panierService.addProductToBasket(userId, productId, quantity);
     }
 
+    @PostMapping("/remove/{userId}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public void removeAllProducts(@PathVariable int userId) {
+        panierService.removeProductsFromBasket(userId);
+    }
+
 
 
 }

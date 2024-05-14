@@ -34,7 +34,7 @@ public class PanierService {
         jdbcTemplate.update("CALL AjouterProduitAuPanier(?, ?, ?)", id_user, id_basket, quantity);
     }
 
-    public void removeProductFromBasket(int id_user, int id_basket, int quantity) {
-        jdbcTemplate.update("CALL RetirerDuPanier(?, ?, ?)", id_user, id_basket, quantity);
+    public void removeProductsFromBasket(int id_user) {
+        jdbcTemplate.update("CALL RetirerDuPanier(?)", id_user);
     }
 }
