@@ -37,4 +37,12 @@ public class ProduitService {
     public void removeZeroStockProduct(int id_product){
         jdbcTemplate.update("CALL SupprimerProduitStockZero(?)",id_product);
     }
+
+    public int getNumberOfLike(int productId) {
+        return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM aime WHERE Product_Id = ?", new Object[]{productId}, Integer.class);
+    }
+
+    public boolean hasLiked(int userId, int productId) {
+        return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM aime WHERE Utilisateur_id = ? AND Product_Id = ?", new Object[]{userId, productId}, Integer.class) > 0;
+    }
 }
