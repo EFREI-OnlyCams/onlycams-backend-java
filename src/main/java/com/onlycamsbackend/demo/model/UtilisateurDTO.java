@@ -1,7 +1,7 @@
 package com.onlycamsbackend.demo.model;
 
 public class UtilisateurDTO {
-    private int utilisateurId;
+    private String utilisateurId;
     private String nom;
     private String prenom;
     private String email;
@@ -16,11 +16,11 @@ public class UtilisateurDTO {
     }
 
     // Getters et Setters
-    public int getUtilisateurId() {
+    public String getUtilisateurId() {
         return utilisateurId;
     }
 
-    public void setUtilisateurId(int utilisateurId) {
+    public void setUtilisateurId(String utilisateurId) {
         this.utilisateurId = utilisateurId;
     }
 

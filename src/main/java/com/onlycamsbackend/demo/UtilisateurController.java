@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 public class UtilisateurController {
@@ -35,6 +37,24 @@ public class UtilisateurController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/allUsers")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public ResponseEntity<List<UtilisateurDTO>> getAllNonValidUsers() {
+        List<UtilisateurDTO> utilisateurDTOList = userService.getAllUserInfo();
+        if (utilisateurDTOList != null && !utilisateurDTOList.isEmpty()) {
+            return ResponseEntity.ok().body(utilisateurDTOList);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/validateUser/{userId}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public void validateUser(@PathVariable int userId) {
+        userService.validateUser(userId);
+    }
+
 
 
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class UtilisateurService {
@@ -26,7 +28,7 @@ public class UtilisateurService {
         String query = "SELECT * FROM utilisateur WHERE utilisateur_id = ?";
         return jdbcTemplate.queryForObject(query, new Object[]{userId}, (rs, rowNum) -> {
             UtilisateurDTO utilisateurDTO = new UtilisateurDTO();
-            utilisateurDTO.setUtilisateurId(rs.getInt("utilisateur_id"));
+            utilisateurDTO.setUtilisateurId(String.valueOf(rs.getInt("utilisateur_id")));
             utilisateurDTO.setNom(rs.getString("nom"));
             utilisateurDTO.setPrenom(rs.getString("prenom"));
             utilisateurDTO.setEmail(rs.getString("email"));
@@ -38,6 +40,26 @@ public class UtilisateurService {
             return utilisateurDTO;
         });
     }
+
+    public List<UtilisateurDTO> getAllUserInfo() {
+        String query = "SELECT * FROM utilisateur WHERE est_valide = false";
+        return jdbcTemplate.query(query, (rs, rowNum) -> {
+            UtilisateurDTO utilisateurDTO = new UtilisateurDTO();
+            utilisateurDTO.setUtilisateurId(String.valueOf(rs.getInt("utilisateur_id")));
+            utilisateurDTO.setNom(rs.getString("nom"));
+            utilisateurDTO.setPrenom(rs.getString("prenom"));
+            utilisateurDTO.setEmail(rs.getString("email"));
+            utilisateurDTO.setNumeroTel(rs.getString("numero_tel"));
+            utilisateurDTO.setEstValide(rs.getBoolean("est_valide"));
+            utilisateurDTO.setEstAdmin(rs.getBoolean("est_admin"));
+            utilisateurDTO.setNote(rs.getInt("note"));
+            utilisateurDTO.setAdresse(rs.getString("adresse"));
+            return utilisateurDTO;
+        });
+    }
+
+
+
     public void changePassword(int id,String motDePasse) {
         jdbcTemplate.update("CALL ChangerMotDePasse(?, ?)",id,motDePasse);
     }
@@ -57,8 +79,6 @@ public class UtilisateurService {
     public void validateUser(int id){
         jdbcTemplate.update("CALL ValiderUtilisateur(?)",id);
     }
-
-
 
 
 }
